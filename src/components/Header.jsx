@@ -12,10 +12,8 @@ function Header() {
   const t = translations[language]
 
   const navigation = [
-    { name: t.nav.services, href: '/services' },
-    { name: t.nav.industries, href: '/industries' },
-    { name: t.nav.insights, href: '/insights' },
-    { name: t.nav.careers, href: '/careers' },
+    { name: t.nav.genai, href: '/genai' },
+    { name: t.nav.integration, href: '/integration' },
     { name: t.nav.about, href: '/about' },
     { name: t.nav.contact, href: '/contact' },
   ]

@@ -7,7 +7,7 @@ export const translations = {
       analytics: 'Advanced Analytics',
       insights: 'Insights',
       careers: 'Careers',
-      about: 'About',
+      about: 'About Us',
       contact: 'Contact'
     },
     hero: {
@@ -93,9 +93,55 @@ export const translations = {
       }
     },
     about: {
-      title: 'About Dynel Solutions',
-      description1: 'We are a boutique consulting firm specializing in innovative IT solutions for the real estate industry. With years of experience and deep industry knowledge, we help our clients navigate the digital transformation journey.',
-      description2: 'Our team of experts combines technical expertise with real estate industry insight to deliver solutions that drive real business value.'
+      hero: {
+        title: 'Transforming Real Estate Through Technology',
+        subtitle: 'A boutique consulting firm specializing in innovative IT solutions for the real estate industry.'
+      },
+      mission: {
+        title: 'Our Mission',
+        description: 'To empower real estate professionals with cutting-edge technology solutions that drive efficiency, innovation, and growth in an ever-evolving digital landscape.'
+      },
+      vision: {
+        title: 'Our Vision',
+        description: 'To be the leading technology partner in the real estate industry, known for innovative solutions that shape the future of property technology.'
+      },
+      values: {
+        title: 'Our Core Values',
+        items: [
+          {
+            title: 'Innovation First',
+            description: 'Pioneering technological solutions that reshape the real estate industry.'
+          },
+          {
+            title: 'Client Success',
+            description: 'Dedicated to delivering measurable value and sustainable growth for our clients.'
+          },
+          {
+            title: 'Excellence',
+            description: 'Maintaining the highest standards in every aspect of our service delivery.'
+          }
+        ]
+      },
+      leadership: {
+        title: 'Our Leadership',
+        team: [
+          {
+            name: 'Justina Kang',
+            role: 'CEO & Founder',
+            description: 'With over 15 years of experience in real estate and technology, Justina leads our vision of transforming the industry through innovative solutions.'
+          },
+          {
+            name: 'Daniel Kang',
+            role: 'CTO',
+            description: 'Daniel brings extensive expertise in AI and software architecture, driving our technical innovation and product development.'
+          }
+        ]
+      },
+      cta: {
+        title: 'Ready to Transform Your Business?',
+        subtitle: 'Let us discuss how our solutions can help you achieve your goals.',
+        button: 'Get in Touch'
+      }
     },
     contact: {
       title: 'Contact Us',
@@ -205,9 +251,55 @@ export const translations = {
       }
     },
     about: {
-      title: 'Dynel Solutionsについて',
-      description1: '私たちは、不動産業界に特化した革新的なITソリューションを提供するブティックコンサルティング企業です。長年の経験と深い業界知識を活かし、お客様のデジタル変革の実現をサポートいたします。',
-      description2: '専門家チームが技術的専門知識と不動産業界の洞察を組み合わせ、実質的なビジネス価値を創出するソリューションを提供します。常に最新のテクノロジーと業界のベストプラクティスを取り入れ、お客様のビジネスの成長を支援します。'
+      hero: {
+        title: 'テクノロジーで不動産を変革する',
+        subtitle: '不動産業界向けの革新的なITソリューションを専門とするブティックコンサルティングファーム'
+      },
+      mission: {
+        title: '私たちのミッション',
+        description: '進化し続けるデジタル環境において、効率性、革新性、成長を促進する最先端のテクノロジーソリューションで不動産のプロフェッショナルをエンパワーすること'
+      },
+      vision: {
+        title: '私たちのビジョン',
+        description: '不動産テクノロジーの未来を形作る革新的なソリューションで知られる、業界をリードするテクノロジーパートナーになること'
+      },
+      values: {
+        title: '私たちの価値観',
+        items: [
+          {
+            title: 'イノベーション重視',
+            description: '不動産業界を再形成する革新的なテクノロジーソリューションの開発'
+          },
+          {
+            title: 'クライアントの成功',
+            description: 'クライアントの持続可能な成長と測定可能な価値の提供に専念'
+          },
+          {
+            title: '卓越性',
+            description: 'サービス提供のあらゆる側面で最高水準を維持'
+          }
+        ]
+      },
+      leadership: {
+        title: 'リーダーシップ',
+        team: [
+          {
+            name: 'ジャスティナ・カン',
+            role: 'CEO & 創業者',
+            description: '不動産とテクノロジーにおける15年以上の経験を活かし、革新的なソリューションで業界の変革を導いています。'
+          },
+          {
+            name: 'ダニエル・カン',
+            role: 'CTO',
+            description: 'AIとソフトウェアアーキテクチャにおける豊富な専門知識を活かし、技術革新と製品開発を推進しています。'
+          }
+        ]
+      },
+      cta: {
+        title: 'ビジネスの変革準備はできていますか？',
+        subtitle: 'お客様の目標達成に向けて、私たちのソリューションについてご相談させていただきます。',
+        button: 'お問い合わせ'
+      }
     },
     contact: {
       title: 'お問い合わせ',

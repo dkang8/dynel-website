@@ -29,17 +29,20 @@ function DataIntegration() {
     {
       title: 'Real-Time Data Sync',
       description: 'Synchronize data across platforms instantly',
-      image: 'https://www.scnsoft.com/blog-pictures/business-intelligence/real-time-analytics-01.png'
+      image: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/apachekafka.svg',
+      color: 'bg-blue-50'
     },
     {
       title: 'Batch Processing',
       description: 'Efficient handling of large data volumes',
-      image: 'https://www.xenonstack.com/hubfs/xenonstack-batch-processing.png'
+      image: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/apache.svg',
+      color: 'bg-green-50'
     },
     {
       title: 'API Integration',
       description: 'Seamless connection with third-party services',
-      image: 'https://cdn.dribbble.com/users/1626229/screenshots/14111981/media/e21f6a2f27a39834c79876f2e409aed1.jpg'
+      image: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/swagger.svg',
+      color: 'bg-purple-50'
     }
   ]
 
@@ -53,11 +56,26 @@ function DataIntegration() {
     data: [45, 25, 15, 10, 5]
   }
 
+  const architectureImage = "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80"
+
+  const protocolIcons = {
+    rest: "https://cdn.worldvectorlogo.com/logos/rest-api.svg",
+    graphql: "https://cdn.worldvectorlogo.com/logos/graphql.svg",
+    soap: "https://cdn.worldvectorlogo.com/logos/soap.svg",
+    websocket: "https://cdn.worldvectorlogo.com/logos/websocket.svg"
+  }
+
+  const integrationFlow = {
+    sources: ['CRM Systems', 'Property Management', 'Financial Data'],
+    processing: ['Data Validation', 'Transformation', 'Enrichment'],
+    destinations: ['Analytics Platform', 'Reporting Tools', 'Business Apps']
+  }
+
   return (
     <div className="pt-24">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-primary to-primary-dark text-white py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div 
               className="max-w-xl"
@@ -65,7 +83,7 @@ function DataIntegration() {
               animate={fadeIn.animate}
               transition={fadeIn.transition}
             >
-              <h1 className="text-5xl font-display font-bold mb-6">
+              <h1 className="text-4xl sm:text-5xl font-display font-bold mb-6">
                 {t.title}
               </h1>
               <p className="text-xl text-gray-100">
@@ -73,15 +91,18 @@ function DataIntegration() {
               </p>
             </motion.div>
             <motion.div
+              className="hidden md:block"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <img 
-                src="https://cdn.dribbble.com/users/1626229/screenshots/14111981/media/e21f6a2f27a39834c79876f2e409aed1.jpg"
-                alt="Data Integration Visualization"
-                className="rounded-lg shadow-2xl"
-              />
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                <div className="grid grid-cols-3 gap-4 text-sm">
+                  {['Sources', 'Processing', 'Destinations'].map((title, i) => (
+                    <div key={i} className="text-center font-semibold">{title}</div>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -98,22 +119,27 @@ function DataIntegration() {
             Our Integration Architecture
           </motion.h2>
           <motion.div
-            className="max-w-4xl mx-auto"
+            className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg"
             initial={fadeIn.initial}
             animate={fadeIn.animate}
           >
             <img 
-              src="https://d2908q01vomqb2.cloudfront.net/fc074d501302eb2b93e2554793fcaf50b3bf7291/2021/06/02/Figure-1.-Data-integration-patterns.png"
+              src={architectureImage}
               alt="Integration Architecture"
-              className="w-full rounded-lg shadow-lg"
+              className="w-full rounded-lg"
             />
+            <div className="mt-6 grid grid-cols-3 gap-4 text-center text-sm">
+              <div className="bg-gray-50 p-2 rounded">Data Sources</div>
+              <div className="bg-primary text-white p-2 rounded">Processing</div>
+              <div className="bg-gray-50 p-2 rounded">Destinations</div>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Integration Types */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <h2 className="text-3xl font-display font-bold text-center mb-12">
             Integration Types
           </h2>
@@ -121,23 +147,96 @@ function DataIntegration() {
             {integrationTypes.map((type, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden"
+                className={`rounded-xl shadow-lg overflow-hidden ${type.color}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
               >
-                <img 
-                  src={type.image}
-                  alt={type.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{type.title}</h3>
-                  <p className="text-gray-600">{type.description}</p>
+                <div className="p-8">
+                  <div className="w-16 h-16 mb-6">
+                    <img 
+                      src={type.image}
+                      alt={type.title}
+                      className="w-full h-full text-primary"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4">
+                    {type.title}
+                  </h3>
+                  <p className="text-gray-600">
+                    {type.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Integration Flow Diagram */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <h2 className="text-3xl font-display font-bold text-center mb-12">
+            Integration Architecture
+          </h2>
+          <motion.div
+            className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 sm:p-8"
+            initial={fadeIn.initial}
+            animate={fadeIn.animate}
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+              {/* Data Sources */}
+              <div className="space-y-4">
+                <h3 className="font-semibold text-center mb-4">Data Sources</h3>
+                {integrationFlow.sources.map((source, index) => (
+                  <div
+                    key={index}
+                    className="bg-blue-50 p-4 rounded-lg text-center text-sm"
+                  >
+                    {source}
+                  </div>
+                ))}
+              </div>
+
+              {/* Processing */}
+              <div className="space-y-4">
+                <h3 className="font-semibold text-center mb-4">Processing</h3>
+                {integrationFlow.processing.map((process, index) => (
+                  <div
+                    key={index}
+                    className="bg-primary/10 p-4 rounded-lg text-center text-sm"
+                  >
+                    {process}
+                  </div>
+                ))}
+              </div>
+
+              {/* Destinations */}
+              <div className="space-y-4">
+                <h3 className="font-semibold text-center mb-4">Destinations</h3>
+                {integrationFlow.destinations.map((dest, index) => (
+                  <div
+                    key={index}
+                    className="bg-green-50 p-4 rounded-lg text-center text-sm"
+                  >
+                    {dest}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Connection Lines */}
+            <div className="hidden sm:block relative mt-8">
+              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 via-primary to-green-400 transform -translate-y-1/2"></div>
+              <div className="grid grid-cols-3 gap-8">
+                {['Extract', 'Transform', 'Load'].map((step, index) => (
+                  <div key={index} className="text-center text-sm text-gray-600">
+                    {step}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -156,22 +255,15 @@ function DataIntegration() {
             >
               <h3 className="text-xl font-semibold mb-6">Supported Protocols</h3>
               <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span>REST API</span>
-                  <span className="text-green-500">✓</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>GraphQL</span>
-                  <span className="text-green-500">✓</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>SOAP</span>
-                  <span className="text-green-500">✓</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>WebSocket</span>
-                  <span className="text-green-500">✓</span>
-                </div>
+                {Object.entries(protocolIcons).map(([key, icon]) => (
+                  <div key={key} className="flex items-center justify-between p-2 bg-gray-50 rounded">
+                    <div className="flex items-center">
+                      <img src={icon} alt={key} className="w-6 h-6 mr-3" />
+                      <span className="capitalize">{key}</span>
+                    </div>
+                    <span className="text-green-500">✓</span>
+                  </div>
+                ))}
               </div>
             </motion.div>
             
