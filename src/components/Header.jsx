@@ -10,6 +10,34 @@ function Header() {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-3xl font-bold text-primary font-display">Dynel</div>
+          
+          {/* Language toggle for mobile */}
+          <div className="md:hidden">
+            <div className="flex space-x-2 items-center border-2 border-primary rounded-md overflow-hidden">
+              <button
+                onClick={() => language !== 'en' && toggleLanguage()}
+                className={`px-3 py-1 transition duration-300 ${
+                  language === 'en' 
+                    ? 'bg-primary text-white' 
+                    : 'text-primary hover:bg-primary/10'
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => language !== 'jp' && toggleLanguage()}
+                className={`px-3 py-1 transition duration-300 ${
+                  language === 'jp' 
+                    ? 'bg-primary text-white' 
+                    : 'text-primary hover:bg-primary/10'
+                }`}
+              >
+                JP
+              </button>
+            </div>
+          </div>
+
+          {/* Desktop navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="#services" className="text-gray-600 hover:text-primary transition duration-300">
               {t.nav.services}
